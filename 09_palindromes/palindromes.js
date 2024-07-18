@@ -1,14 +1,10 @@
-const palindromes = function (string) {
-    let endIndex = string.length - 1;
-    let startIndex = 0;
-    while(startIndex != endIndex){
-        if(string[startIndex] != string[endIndex]){
-            return false;
-        }
-        startIndex++;
-        endIndex--;
-    }
-    return true;
+const palindromes = function (string) {  
+    let viableChars = "abcdefghijklmnopqrstuvwxyz0123456789";
+    const str = string.toLowerCase().split("")
+    .filter((char) => viableChars.includes(char))
+    .join("");
+    const reversed = str.split("").reverse().join("");
+    return str === reversed;
 };
 
 // Do not edit below this line
